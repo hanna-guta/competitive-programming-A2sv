@@ -8,7 +8,7 @@ class Solution:
     def maxAncestorDiff(self, root: Optional[TreeNode]) -> int:
         max_diff = 0
 
-        def dfs(node , min_, max_ ):
+        def dfs(node , min_ = inf, max_ = -inf):
             nonlocal max_diff
 
             if not node:
@@ -19,13 +19,14 @@ class Solution:
             max_diff = max(max_diff , max_ - min_)
 
             dfs(node.left , min_ , max_)
-            dfs(node.right , min_ ,max_)
+            dfs(node.right , min_ , max_)
 
-        dfs(root , root.val , 0)
+        dfs(root)
 
         return max_diff
 
 
+        
 
 
             

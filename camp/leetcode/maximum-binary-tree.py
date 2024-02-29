@@ -7,9 +7,6 @@
 
 class Solution:
     def constructMaximumBinaryTree(self, nums: List[int]) -> Optional[TreeNode]:
-        if not nums:
-            return None
-
         def dfs(left, right):
             if left > right:
                 return None
